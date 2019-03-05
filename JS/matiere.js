@@ -3,5 +3,5 @@ class Matiere {
         this.horaire = horaire;
         this.nom = nom;
     }
-    
+
 }

@@ -10,9 +10,8 @@ class Edt {
     affichage() {
         var affichage = document.getElementById("affichageEDT");
         for (let i = 0; i < 4; i++) {
-            var p = document.createElement("p");
-            p.innerHTML = this.matieres[i].nom;
-            affichage.appendChild(p);
+            var p = affichage.children[i];
+            p.innerHTML = p.textContent + " : " + this.matieres[i].nom;
         }
     }
 
