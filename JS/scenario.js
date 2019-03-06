@@ -1,8 +1,9 @@
+// variables
 var edt = new Edt();
-edt.affichage();
 var pers = new Personnage(50, 50);
-pers.placer();
+var exo = document.getElementById("exercice");
 
+// functions
 function mouvementClavier(event) {
     var k = event.keyCode; // event est ici un keydown, et keyCode est le code de la touche pressée
     switch (k) {
@@ -21,4 +22,9 @@ function mouvementClavier(event) {
     }
 }
 
+// scénario
+edt.affichage();
+pers.placer();
+
+// events
 document.body.addEventListener("keydown", mouvementClavier);
