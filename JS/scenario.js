@@ -37,3 +37,4 @@ pers.placer();
 
 // events
 document.body.addEventListener("keydown", mouvementClavier);
+document.body.addEventListener("keypressed", mouvementClavier);
