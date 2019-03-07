@@ -26,6 +26,9 @@ function mouvementClavier(event) {
             pers.mouvement(0, 5);
             break;
     }
+    /* ce serait pas mal si le gif ne se reset pas, comme ca on 
+     * aurait du mvt lors des deplacements et un etat immobile quand on bouge pas
+     * perso.src = "IMG/sprite.png" */
 }
 
 // scénario
