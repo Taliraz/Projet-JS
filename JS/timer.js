@@ -16,10 +16,20 @@ function chrono() {
         else
             chonoStop();
         if (min<10){
-            document.getElementById("clock").innerHTML = h + ":0" + min;
+            if (h<10){
+                document.getElementById("clock").innerHTML ="0"+ h + ":0" + min;
+            }
+            else{
+                document.getElementById("clock").innerHTML = h + ":0" + min;
+            }
         }
         else{
-            document.getElementById("clock").innerHTML = h + ":" + min;
+            if(h<10){
+                document.getElementById("clock").innerHTML ="0"+ h + ":" + min;
+            }
+            else{
+                document.getElementById("clock").innerHTML = h + ":" + min; 
+            }
         }
         setTimeout(chrono, 1000);
     }
