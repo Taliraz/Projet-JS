@@ -1,11 +1,12 @@
 var h = 8;
 var min = 0;
 var inProgress = false;
+chronoStart();
 
 function chrono() {
     if (inProgress) {
         if (h < 18) {
-            if (min < 60)
+            if (min < 59)
                 min++;
             else {
                 min = 0;
@@ -14,7 +15,12 @@ function chrono() {
         }
         else
             chonoStop();
-        document.getElementById("clock").innerHTML = h + ":" + min;
+        if (min<10){
+            document.getElementById("clock").innerHTML = h + ":0" + min;
+        }
+        else{
+            document.getElementById("clock").innerHTML = h + ":" + min;
+        }
         setTimeout(chrono, 1000);
     }
 }
