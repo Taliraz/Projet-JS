@@ -20,7 +20,6 @@ class php {
         p4.innerHTML = "}"
         exo.appendChild(p4);
         document.getElementsByTagName("button")[0].addEventListener("click", this.verify);
-        //foreach($tab_obj as $cle => $valeur) {
     }
     
     verify() {

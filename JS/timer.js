@@ -1,69 +1,36 @@
-class Timer{
+var h = 8;
+var min = 0;
+var inProgress = false;
 
-	constructor{
-		var startTime = 0
-		var start = 0
-		var end = 0
-		var diff = 0
-		var timerID = 0
-		window.onload = chronoStart;
-	}
+function chrono() {
+    if (inProgress) {
+        if (h < 18) {
+            if (min < 60)
+                min++;
+            else {
+                min = 0;
+                h++
+            }
+        }
+        else
+            chonoStop();
+        document.getElementById("clock").innerHTML = h + ":" + min;
+        setTimeout(chrono, 1000);
+    }
+}
 
-	chrono(){
-		end = new Date()
-		diff = end - start
-		diff = new Date(diff)
-		var msec = diff.getMilliseconds()
-		var sec = diff.getSeconds()
-		var min = diff.getMinutes()
-		var hr = diff.getHours()-1
-		if (min < 10){
-			min = "0" + min
-		}
-		if (sec < 10){
-			sec = "0" + sec
-		}
-		if(msec < 10){
-			msec = "00" +msec
-		}
-		else if(msec < 100){
-			msec = "0" +msec
-		}
-		document.getElementById("chronotime").value = hr + ":" + min + ":" + sec + ":" + msec
-		timerID = setTimeout("chrono()", 10)
-	}
+function chronoStart() {
+    inProgress = true;
+    chrono();
+}
 
-	chronoStart(){
-		document.chronoForm.startstop.value = "stop!"
-		document.chronoForm.startstop.onclick = chronoStop
-		document.chronoForm.reset.onclick = chronoReset
-		start = new Date()
-		chrono()
-	}
+function chronoStop() {
+    inProgress = false;
+    chrono();
+}
 
-	chronoContinue(){
-		document.chronoForm.startstop.value = "stop!"
-		document.chronoForm.startstop.onclick = chronoStop
-		document.chronoForm.reset.onclick = chronoReset
-		start = new Date()-diff
-		start = new Date(start)
-		chrono()
-	}
-
-	chronoReset(){
-		document.getElementById("chronotime").value = "0:00:00:000"
-		start = new Date()
-	}
-
-	chronoStopReset(){
-		document.getElementById("chronotime").value = "0:00:00:000"
-		document.chronoForm.startstop.onclick = chronoStart
-	}
-
-	chronoStop(){
-		document.chronoForm.startstop.value = "start!"
-		document.chronoForm.startstop.onclick = chronoContinue
-		document.chronoForm.reset.onclick = chronoStopReset
-		clearTimeout(timerID)
-	}
+function chronoReset() {
+    h = 8;
+    min = 0;
+    document.getElementById("clock").innerHTML = h + ":" + min;
 }
