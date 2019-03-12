@@ -14,7 +14,7 @@ function chrono() {
             }
         }
         else
-            chonoStop();
+            chronoStop();
         if (min<10){
             if (h<10){
                 document.getElementById("clock").innerHTML ="0"+ h + ":0" + min;
