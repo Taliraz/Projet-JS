@@ -1,6 +1,6 @@
 // variables
 var edt = new Edt();
-var pers = new Personnage(50, 50);
+var pers = new Personnage(55, 150);
 var exo = document.getElementById("exercice");
 
 // functions
