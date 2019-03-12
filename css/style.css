@@ -1,0 +1,25 @@
+
+.game{
+	display: flex;
+}
+
+.left{
+	width: 500px;
+}
+
+.right{
+	margin-left: 20px;
+}
+
+#personnage{
+	position: relative;
+}
+
+#map{
+	position: inherit;
+	width: 100%;
+}
+
+h1{
+	margin-left : 50px;
+}

@@ -1,23 +1,30 @@
+<!DOCTYPE html>
 <html>
-    <meta charset="UTF-8">
-    <title>Projet JS</title>
+
 <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
 </head>
 
 <body>
-    <div id="affichageEDT">
-        <p>8h00</p>
-        <p>10h00</p>
-        <p>14h00</p>
-        <p>16h00</p>
+    <h1> HEY, IL NOUS FAUT UN TITRE </h1>
+    <div class="game">
+        <div class = "left">
+             <img src="IMG/map.png" id="map">
+         </div>
+         <div class="right">
+            <div id="affichageEDT">
+                <p>8h00</p>
+                <p>10h00</p>
+                <p>14h00</p>
+                <p>16h00</p>
+            </div>
+            <div id="exercice"></div>
+        </div>
     </div>
-    <div id="exercice">
     <button>Vérifier</button>
-    </div>
-    <div id="mapPers">
-    <img src="IMG/map.png" id="map" style="position: relative" width=40%>
-    <img src="IMG/sprite.png" id="personnage" style="position:relative">
-    </div>
+    <img src="IMG/sprite.png" id="personnage">
+   
     <script src="JS/personnage.js"></script>
     <script src="JS/matiere.js"></script>
     <script src="JS/edt.js"></script>
