@@ -40,3 +40,11 @@ h1{
 	box-shadow: 0px 5px 5px white;
 	background-image: linear-gradient(to right top, #ffffff, #a8eb12);
 }
+#clock{
+    font-size: 75px;
+    color:green;
+    background-color: black;
+    text-align: center;
+    width: 170px;
+    border: grey 10px solid;
+}
