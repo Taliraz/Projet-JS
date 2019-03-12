@@ -21,11 +21,14 @@ class php {
         exo.appendChild(p4);
         document.getElementsByTagName("button")[0].addEventListener("click", this.verify);
     }
-    
+
     verify() {
         var res = document.getElementById("result").value
         res = res.replace(/\s+/g, '');
-        if (res === "foreach($tab_objas$cle=>$valeur){")
-            console.log("true");
+        if (res === "foreach($tab_objas$cle=>$valeur){") {
+            while (exo.firstChild) {
+                exo.removeChild(exo.firstChild);
+            }
+        }
     }
 }
