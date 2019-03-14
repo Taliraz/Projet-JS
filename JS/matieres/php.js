@@ -3,6 +3,7 @@ class php {
     construct() {}
 
     start() {
+        mapSprite.style.display="none";
         let p1 = document.createElement("p");
         p1.innerHTML = "$rep = Model::$pdo - > query(\"SELECT * FROM voiture\");"
         exo.appendChild(p1);
@@ -19,16 +20,20 @@ class php {
         let p4 = document.createElement("p");
         p4.innerHTML = "}"
         exo.appendChild(p4);
+        let p5 = document.createElement("button");
+        p5.innerHTML = "Vérifier"
+        exo.appendChild(p5);
         document.getElementsByTagName("button")[0].addEventListener("click", this.verify);
     }
 
     verify() {
         var res = document.getElementById("result").value
         res = res.replace(/\s+/g, '');
-        if (res === "foreach($tab_objas$cle=>$valeur){") {
+        if (res === "foreach($tab_objas$valeur){") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
             }
         }
+        mapSprite.style.display="block";
     }
 }

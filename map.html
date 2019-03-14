@@ -10,7 +10,11 @@
     <h1> HEY, IL NOUS FAUT UN TITRE </h1>
     <div class="game">
         <div class = "left">
-             <img src="IMG/map.png" id="map">
+            <div id="mapSprite">
+                 <img src="IMG/map.png" id="map">
+                 <img src="IMG/sprite.png" id="personnage">
+         </div>
+             <div id="exercice"></div>
          </div>
          <div class="right">
             <div id="affichageEDT">
@@ -19,12 +23,10 @@
                 <p>14h00</p>
                 <p>16h00</p>
             </div>
-            <div id="exercice"></div>
              <div id="clock"></div>
         </div>
     </div>
-    <button>Vérifier</button>
-    <img src="IMG/sprite.png" id="personnage">
+    
     <script src="JS/personnage.js"></script>
     <script src="JS/matiere.js"></script>
     <script src="JS/matieres/php.js"></script>

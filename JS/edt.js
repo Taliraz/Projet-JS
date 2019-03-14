@@ -2,7 +2,7 @@ class Edt {
     
     constructor() {
         var NomMatieres = ["Base de donnees", "C", "Java", "JavaScript", "Scheme", "Reseau", "PHP", "Maths"];
-        var salles = ["K101", "K102", "K103", "K104", "K105", "K106", "K107", "K108"];
+        var salles = ["K101", "K102", "K103", "K104", "K105", "K106", "K107", "K108","K109","K111","K113","K115"];
         
         NomMatieres.sort(function () { // mélange l'array de manière aléatoire
             return .5 - Math.random();

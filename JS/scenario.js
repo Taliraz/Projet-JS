@@ -2,7 +2,8 @@
 var edt = new Edt();
 var pers = new Personnage(55, 150);
 var exo = document.getElementById("exercice");
-
+var left=document.getElementsByClassName("left")[0];
+var mapSprite=document.getElementById("mapSprite");
 // functions
 function mouvementClavier(event) {
     var k = event.keyCode; // event est ici un keydown, et keyCode est le code de la touche pressée
