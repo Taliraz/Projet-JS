@@ -15,6 +15,4 @@ class Personnage {
         this.sprite.style.top = this.coordY + "px";
         this.sprite.style.left = this.coordX + "px";
     }
-
-
 }

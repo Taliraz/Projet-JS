@@ -12,23 +12,19 @@ function chrono() {
                 min = 0;
                 h++
             }
-        }
-        else
+        } else
             chronoStop();
-        if (min<10){
-            if (h<10){
-                document.getElementById("clock").innerHTML ="0"+ h + ":0" + min;
-            }
-            else{
+        if (min < 10) {
+            if (h < 10) {
+                document.getElementById("clock").innerHTML = "0" + h + ":0" + min;
+            } else {
                 document.getElementById("clock").innerHTML = h + ":0" + min;
             }
-        }
-        else{
-            if(h<10){
-                document.getElementById("clock").innerHTML ="0"+ h + ":" + min;
-            }
-            else{
-                document.getElementById("clock").innerHTML = h + ":" + min; 
+        } else {
+            if (h < 10) {
+                document.getElementById("clock").innerHTML = "0" + h + ":" + min;
+            } else {
+                document.getElementById("clock").innerHTML = h + ":" + min;
             }
         }
         setTimeout(chrono, 1000);

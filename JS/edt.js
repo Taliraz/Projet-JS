@@ -1,9 +1,9 @@
 class Edt {
-    
+
     constructor() {
         var NomMatieres = ["Base de donnees", "C", "Java", "JavaScript", "Scheme", "Reseau", "PHP", "Maths"];
-        var salles = ["K101", "K102", "K103", "K104", "K105", "K106", "K107", "K108","K109","K111","K113","K115"];
-        
+        var salles = ["K101", "K102", "K103", "K104", "K105", "K106", "K107", "K108", "K109", "K111", "K113", "K115"];
+
         NomMatieres.sort(function () { // mélange l'array de manière aléatoire
             return .5 - Math.random();
         });
@@ -15,10 +15,13 @@ class Edt {
 
     affichage() {
         var affichage = document.getElementById("affichageEDT");
-        for (let i = 0; i < 4; i++) {
-            var p = affichage.children[i];
-            p.innerHTML = p.textContent + " : " + this.matieres[i].nom + " " + this.matieres[i].salle;
-        }
+        for (var i = 0; i < 4; i++) {
+            var nomMatiere = document.createElement("p");
+            nomMatiere.innerHTML = this.matieres[i].nom;
+            var nomSalle = document.createElement("p");
+            nomSalle.innerHTML = this.matieres[i].salle;
+            affichage.children[i].insertBefore(nomSalle, affichage.children[i].firstChild);
+            affichage.children[i].insertBefore(nomMatiere, affichage.children[i].firstChild);
+        };
     }
-
 }
