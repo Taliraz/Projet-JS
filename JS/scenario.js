@@ -1,6 +1,6 @@
 // variables
 var edt = new Edt();
-var pers = new Personnage(55, 150);
+var pers = new Personnage(17, 17);
 var exo = document.getElementById("exercice");
 var left = document.getElementsByClassName("left")[0];
 var mapSprite = document.getElementById("mapSprite");

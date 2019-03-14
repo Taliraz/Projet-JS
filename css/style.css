@@ -7,17 +7,22 @@
 .left {
     height: 85vh;
     width: 85vh;
+    position: inherit;
 }
 
 .right {
-    margin-left: 20px;
+    margin-left: 5vw;
 }
 
 h1 {
-    margin-left: 50px;
+    margin-left: 5pw;
 }
 
 /* Map */
+
+#mapSprite {
+    position: relative;
+}
 
 #map {
     width: 100%;
@@ -48,7 +53,7 @@ h1 {
     height: 15%;
     width: 100%;
     border: grey 1vh solid;
-    font-size: 75px;
+    font-size: 10vh;
     color: green;
     background-color: black;
     text-align: center;

@@ -12,7 +12,7 @@ class Personnage {
     }
 
     placer() {
-        this.sprite.style.top = this.coordY + "px";
-        this.sprite.style.left = this.coordX + "px";
+        this.sprite.style.top = this.coordY + "%";
+        this.sprite.style.left = this.coordX + "%";
     }
 }
