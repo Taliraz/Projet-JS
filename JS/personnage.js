@@ -3,6 +3,7 @@ class Personnage {
         this.coordX = coordX;
         this.coordY = coordY;
         this.sprite = document.getElementById("personnage");
+        this.move = false;
     }
 
     mouvement(X, Y) {
