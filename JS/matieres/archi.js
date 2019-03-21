@@ -25,8 +25,15 @@ class archi {
         if (res === "101011001") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
+                mapSprite.style.display="block";
             }
         }
-        mapSprite.style.display="block";
+        else{
+            let err=document.createElement("p");
+            err.innerHTML="Réponse erronée";
+            err.style.color="red";
+            exo.insertBefore(err,document.getElementById("result"));
+        }
+        
     }
 }
