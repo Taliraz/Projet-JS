@@ -24,4 +24,13 @@ class Edt {
             affichage.children[i].insertBefore(nomMatiere, affichage.children[i].firstChild);
         };
     }
+    
+    getMatiere(horaire,salle){
+        for (var i=0;i<matieres.length;i++){
+            if(matieres[i].horaire>horaire && matieres[i].horaire<horaire+2){
+                return matieres[i];
+            }
+        }
+    }
 }
+
