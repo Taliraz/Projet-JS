@@ -29,7 +29,7 @@ h1 {
 }
 
 #personnage {
-    width: 4vh;
+    height: 3vh;
     position: absolute;
 }
 
@@ -46,6 +46,10 @@ h1 {
     margin: 1vh;
     border: solid black 1px;
     text-align: center;
+}
+
+#affichageEDT > div > p {
+    margin: 1vh;
 }
 
 /* Clock */
