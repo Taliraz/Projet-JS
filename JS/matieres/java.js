@@ -5,7 +5,7 @@ class java {
     start() {
         mapSprite.style.display="none";
         let p1 = document.createElement("p");
-        p1.innerHTML = "public static void main(String[]args){");"
+        p1.innerHTML = "public static void main(String[]args){";
         exo.appendChild(p1);
         let input = document.createElement("input");
         input.id = "result";
@@ -13,7 +13,7 @@ class java {
         input.placeholder="Boucle de 0 à 9"
         exo.append(input);
         let p2 = document.createElement("p");
-        p2.innerHTML = "   System.out.println(i+\"/\"+n)"
+        p2.innerHTML = "System.out.println(i+\"/\"+n)"
         exo.appendChild(p2);
         let p3 = document.createElement("p");
         p3.innerHTML = "}";
