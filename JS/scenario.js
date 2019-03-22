@@ -24,10 +24,11 @@ function mouvementClavier(event) {
         pers.sprite.src = "IMG/sprite.gif";
         pers.move = true;
     }
+    var peutEntrer = canEnter();
     switch (k) {
         case 37: // touche gauche
             pers.sprite.style.transform = "rotate(0deg)";
-            if (!canEnter()) {
+            if (!peutEntrer) {
                 if (pers.coordX > 17 && ((pers.coordX > 73 || pers.coordX < 70) || (pers.coordY <= 23 || pers.coordY >= 73))) // Collision
                     pers.mouvement(-1, 0);
             } else
@@ -59,12 +60,18 @@ function finClavier(event) {
 }
 
 function canEnter() {
-    listDoor.forEach(function (element) {
+    /*listDoor.forEach(function (element) {
         if (pers.coordX >= element.coordXmin && pers.coordX <= element.coordXmax && pers.coordY >= element.coordYmin && pers.coordY <= element.coordYmax) {
             console.log("rentre");
             return true;
         }
-    });
+    });*/
+    for(let door of listDoor){
+        if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
+            console.log("rentre");
+            return true;
+        }
+    }
 }
 
 // scénario
