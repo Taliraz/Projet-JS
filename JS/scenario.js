@@ -86,7 +86,7 @@ function inDoor(position){
             if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
                 console.log("dans la porte");
                 // lance le cours correspondant
-                edt.matieres[1].lancer();
+                edt.matieres[1].lancer
             }
         }else if(position == 1){ // porte verticale (right-left)
             if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
@@ -97,6 +97,14 @@ function inDoor(position){
         }
     }
 }
+
+/* fonction qui empeche le deplacement du perso, 
+ * lance un cours, permet au perso de se redeplacer 
+ * une fois le cours fini 
+ * Eventuelle gestion des points si la salle n'est pas bonne
+ * ou retard etc... */
+
+function inClass(){}
 
 // scénario
 edt.affichage();
