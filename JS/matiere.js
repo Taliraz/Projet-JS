@@ -16,7 +16,7 @@ class Matiere {
         if (this.nom == "JavaScript")
             mat = new javascript();
         if (this.nom == "Maths")
-            mat = new maths();
+            mat = new math();
         if (this.nom == "PHP")
             mat = new php();
         if (this.nom == "reseau")
