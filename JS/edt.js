@@ -27,10 +27,63 @@ class Edt {
     
     getMatiere(horaire,salle){
         for (var i=0;i<matieres.length;i++){
-            if(matieres[i].horaire>horaire && matieres[i].horaire<horaire+2){
+            if(matieres[i].horaire==horaire && matieres[i].salle==salle){
                 return matieres[i];
             }
         }
     }
+    
+    
+    getHoraire(heures,minutes){
+        if(heures==8 || heures ==9){
+            return 1;
+        }
+        else if(heures==10){
+            if(minutes>=15){
+                return 2
+            }
+            else{
+                return 0
+            }
+            
+        }
+        else if(heures==11){
+            return 2
+        }
+        else if(heures==12){
+            if (minutes<=15){
+                return 2
+            }
+            else{
+                return 0;
+            }
+        }
+        else if(heures==13){
+            if(minutes>=45){
+                return 3;
+            }
+            else{
+                return 0;
+            }
+        }
+        else if(heures==14){
+            return 3
+        }
+        else if(heures==15){
+            if(minutes<=45){
+                return 3
+            }
+            else{
+                return 0
+            }
+        }
+        else if(heures==16 && heures==17){
+            return 4
+        }
+        else{
+            return 0
+        }
+    }
+    
 }
 
