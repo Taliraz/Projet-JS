@@ -32,6 +32,7 @@ function mouvementClavier(event) {
                     pers.mouvement(-1, 0);
             } else
                 pers.mouvement(-1, 0);
+            inDoor(0);
             break;
         case 38: // touche haut
             pers.sprite.style.transform = "rotate(90deg)";
@@ -40,6 +41,7 @@ function mouvementClavier(event) {
                     pers.mouvement(0, -1);
             } else  
                 pers.mouvement(0, -1);
+            inDoor(1);
             break;
         case 39: // touche droite
             pers.sprite.style.transform = "rotate(180deg)";
@@ -48,6 +50,7 @@ function mouvementClavier(event) {
                     pers.mouvement(1, 0);
             } else 
                 pers.mouvement(1, 0);
+            inDoor(0);
             break;
         case 40: // touche bas
             pers.sprite.style.transform = "rotate(-90deg)";
@@ -56,11 +59,9 @@ function mouvementClavier(event) {
                     pers.mouvement(0, 1);
             } else  
                 pers.mouvement(0, 1);
+            inDoor(1);
             break;
     }
-
-    inDoor();
-
 }
 
 function finClavier(event) {
@@ -71,26 +72,29 @@ function finClavier(event) {
 }
 
 function canEnter() {
-    /*listDoor.forEach(function (element) {
-        if (pers.coordX >= element.coordXmin && pers.coordX <= element.coordXmax && pers.coordY >= element.coordYmin && pers.coordY <= element.coordYmax) {
-            console.log("rentre");
-            return true;
-        }
-    });*/
     for(let door of listDoor){
         if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
             console.log("rentre");
             return true;
         }
+        else console.log("ne peux pas rentrer");
     }
 }
 
-function inDoor(){
+function inDoor(position){
     for(let door of listDoor){
-        if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
-            console.log("dans la porte");
-            // lance le cours correspondant
-            edt.matieres[1].lancer();
+        if(position == 0){ // porte horizontale (up-down)
+            if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
+                console.log("dans la porte");
+                // lance le cours correspondant
+                // edt.matieres[1].lancer();
+            }
+        }else if(position == 1){ // porte verticale (right-left)
+            if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
+                console.log("dans la porte");
+                // lance le cours correspondant
+                // edt.matieres[1].lancer();
+            }
         }
     }
 }
