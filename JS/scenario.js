@@ -4,16 +4,16 @@ var pers = new Personnage(17, 17);
 var exo = document.getElementById("exercice");
 var left = document.getElementsByClassName("left")[0];
 var mapSprite = document.getElementById("mapSprite");
-var listDoor = [(new Door(15, 17, 50, 53, "K101")),
-                (new Door(15, 17, 50, 53, "K102")),
-                (new Door(15, 17, 50, 53, "K103")),
-                (new Door(15, 17, 50, 53, "K104")),
-                (new Door(15, 17, 50, 53, "K105")),
-                (new Door(15, 17, 50, 53, "K106")),
-                (new Door(15, 17, 50, 53, "K107")),
-                (new Door(15, 17, 50, 53, "K108")),
-                (new Door(15, 17, 50, 53, "K109")),
-                (new Door(15, 17, 50, 53, "K111")),
+var listDoor = [(new Door(50, 53, 79, 81, "K101")), //
+                (new Door(23, 25, 46, 49, "K102")), //
+                (new Door(60, 66, 79, 81, "K103")), //
+                (new Door(47, 50, 71, 73, "K104")), //
+                (new Door(80, 82, 42, 45, "K105")), //
+                (new Door(71, 73, 46, 49, "K106")), //
+                (new Door(80, 82, 30, 33, "K107")), //
+                (new Door(46, 49, 23, 25, "K108")), //
+                (new Door(43, 46, 15, 17, "K109")), //
+                (new Door(32, 35, 15, 17, "K111")), //
                 (new Door(15, 17, 50, 53, "K113")), //ok
                 (new Door(15, 17, 64, 67, "K115"))]; //ok
 
