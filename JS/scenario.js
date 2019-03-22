@@ -77,7 +77,6 @@ function canEnter() {
             console.log("rentre");
             return true;
         }
-        else console.log("ne peux pas rentrer");
     }
 }
 
@@ -87,13 +86,13 @@ function inDoor(position){
             if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
                 console.log("dans la porte");
                 // lance le cours correspondant
-                // edt.matieres[1].lancer();
+                edt.matieres[1].lancer();
             }
         }else if(position == 1){ // porte verticale (right-left)
             if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
                 console.log("dans la porte");
                 // lance le cours correspondant
-                // edt.matieres[1].lancer();
+                edt.matieres[1].lancer();
             }
         }
     }
