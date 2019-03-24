@@ -24,66 +24,52 @@ class Edt {
             affichage.children[i].insertBefore(nomMatiere, affichage.children[i].firstChild);
         };
     }
-    
-    getMatiere(horaire,salle){
-        for (var i=0;i<matieres.length;i++){
-            if(matieres[i].horaire==horaire && matieres[i].salle==salle){
+
+    getMatiere(horaire, salle) {
+        for (var i = 0; i < matieres.length; i++) {
+            if (matieres[i].horaire == horaire && matieres[i].salle == salle) {
                 return matieres[i];
             }
         }
     }
-    
-    
-    getHoraire(heures,minutes){
-        if(heures==8 || heures ==9){
+
+
+    getHoraire(heures, minutes) {
+        if (heures == 8 || heures == 9) {
             return 1;
-        }
-        else if(heures==10){
-            if(minutes>=15){
+        } else if (heures == 10) {
+            if (minutes >= 15) {
                 return 2
-            }
-            else{
+            } else {
                 return 0
             }
-            
-        }
-        else if(heures==11){
+
+        } else if (heures == 11) {
             return 2
-        }
-        else if(heures==12){
-            if (minutes<=15){
+        } else if (heures == 12) {
+            if (minutes <= 15) {
                 return 2
-            }
-            else{
+            } else {
                 return 0;
             }
-        }
-        else if(heures==13){
-            if(minutes>=45){
+        } else if (heures == 13) {
+            if (minutes >= 45) {
                 return 3;
-            }
-            else{
+            } else {
                 return 0;
             }
-        }
-        else if(heures==14){
+        } else if (heures == 14) {
             return 3
-        }
-        else if(heures==15){
-            if(minutes<=45){
+        } else if (heures == 15) {
+            if (minutes <= 45) {
                 return 3
-            }
-            else{
+            } else {
                 return 0
             }
-        }
-        else if(heures==16 && heures==17){
+        } else if (heures == 16 && heures == 17) {
             return 4
-        }
-        else{
+        } else {
             return 0
         }
     }
-    
 }
-

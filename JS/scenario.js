@@ -36,28 +36,28 @@ function mouvementClavier(event) {
             break;
         case 38: // touche haut
             pers.sprite.style.transform = "rotate(90deg)";
-            if(!canEnter()){
+            if (!canEnter()) {
                 if (pers.coordY > 17 && ((pers.coordY > 73 || pers.coordY < 70) || (pers.coordX <= 23 || pers.coordX >= 73))) // Collision
                     pers.mouvement(0, -1);
-            } else  
+            } else
                 pers.mouvement(0, -1);
             inDoor(1);
             break;
         case 39: // touche droite
             pers.sprite.style.transform = "rotate(180deg)";
-            if(!canEnter()){
+            if (!canEnter()) {
                 if (pers.coordX < 80 && ((pers.coordX < 23 || pers.coordX > 25) || (pers.coordY <= 23 || pers.coordY >= 73))) // Collision
                     pers.mouvement(1, 0);
-            } else 
+            } else
                 pers.mouvement(1, 0);
             inDoor(0);
             break;
         case 40: // touche bas
             pers.sprite.style.transform = "rotate(-90deg)";
-            if(!canEnter()){
+            if (!canEnter()) {
                 if (pers.coordY < 79 && ((pers.coordY < 23 || pers.coordY > 25) || (pers.coordX <= 23 || pers.coordX >= 73))) // Collision
                     pers.mouvement(0, 1);
-            } else  
+            } else
                 pers.mouvement(0, 1);
             inDoor(1);
             break;
@@ -72,7 +72,7 @@ function finClavier(event) {
 }
 
 function canEnter() {
-    for(let door of listDoor){
+    for (let door of listDoor) {
         if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
             console.log(door.salle);
             return true;
@@ -80,15 +80,15 @@ function canEnter() {
     }
 }
 
-function inDoor(position){
-    for(let door of listDoor){
-        if(position == 0){ // porte horizontale (up-down)
+function inDoor(position) {
+    for (let door of listDoor) {
+        if (position == 0) { // porte horizontale (up-down)
             if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
                 edt.matieres[0].lancer
             }
-        }else if(position == 1){ // porte verticale (right-left)
+        } else if (position == 1) { // porte verticale (right-left)
             if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
@@ -104,7 +104,7 @@ function inDoor(position){
  * Eventuelle gestion des points si la salle n'est pas bonne
  * ou retard etc... */
 
-function inClass(){}
+function inClass() {}
 
 // scénario
 edt.affichage();
