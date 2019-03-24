@@ -1,24 +1,54 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
 </head>
 
 <body>
-    <div id="affichageEDT">
-        <p>8h00</p>
-        <p>10h00</p>
-        <p>14h00</p>
-        <p>16h00</p>
+    <h1> HEY, IL NOUS FAUT UN TITRE </h1>
+    <div class="game">
+        <div class="left">
+            <div id="mapSprite">
+                <img src="IMG/petite_map.png" id="map">
+                <img src="IMG/sprite.png" id="personnage">
+            </div>
+            <div id="exercice"></div>
+        </div>
+        <div class="right">
+            <div id="clock"></div>
+            <div id="affichageEDT">
+                <div style="background-color:#ff99ff">
+                    <p>08h00 - 10h00</p>
+                </div>
+                <div style="background-color:#ffff80">
+                    <p>10h15 - 12h15</p>
+                </div>
+                <div style="background-color:#ffcc66">
+                    <p>13h45 - 15H45</p>
+                </div>
+                <div style="background-color:#ccffcc">
+                    <p>16h00 - 18h00</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="exercice"></div>
-    <button>Vérifier</button>
-    <img src="IMG/sprite.png" id="personnage" style="position:relative">
-    <img src="IMG/map.png" id="map" style="position: relative" width=25%>
+
     <script src="JS/personnage.js"></script>
     <script src="JS/matiere.js"></script>
-    <script src="JS/edt.js"></script>
-    <script src="JS/scenario.js"></script>
     <script src="JS/matieres/php.js"></script>
+    <script src="JS/matieres/scheme.js"></script>
+    <script src="JS/matieres/java.js"></script>
+    <script src="JS/matieres/javascript.js"></script>
+    <script src="JS/matieres/bd.js"></script>
+    <script src="JS/matieres/archi.js"></script>
+    <script src="JS/matieres/reseau.js"></script>
+    <script src="JS/matieres/math.js"></script>
+    <script src="JS/edt.js"></script>
+    <script src="JS/timer.js"></script>
+    <script src="JS/door.js"></script>
+    <script src="JS/scenario.js"></script>
 </body>
 
 </html>

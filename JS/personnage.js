@@ -3,6 +3,7 @@ class Personnage {
         this.coordX = coordX;
         this.coordY = coordY;
         this.sprite = document.getElementById("personnage");
+        this.move = false;
     }
 
     mouvement(X, Y) {
@@ -12,9 +13,7 @@ class Personnage {
     }
 
     placer() {
-        this.sprite.style.top = this.coordY + "px";
-        this.sprite.style.left = this.coordX + "px";
+        this.sprite.style.top = this.coordY + "%";
+        this.sprite.style.left = this.coordX + "%";
     }
-
-
 }

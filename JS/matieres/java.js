@@ -1,21 +1,22 @@
-class php {
+class java {
 
     construct() {}
 
     start() {
         mapSprite.style.display="none";
         let p1 = document.createElement("p");
-        p1.innerHTML = "$rep = Model::$pdo - > query(\"SELECT * FROM voiture\");"
+        p1.innerHTML = "public static void main(String[]args){";
         exo.appendChild(p1);
-        let p2 = document.createElement("p");
-        p2.innerHTML = "$tab_obj = $rep - > fetchAll(PDO::FETCH_ASSOC);"
-        exo.appendChild(p2);
         let input = document.createElement("input");
         input.id = "result";
         input.style.width = "300px";
+        input.placeholder="Boucle de 0 à 9"
         exo.append(input);
+        let p2 = document.createElement("p");
+        p2.innerHTML = "System.out.println(i+\"/\"+n)"
+        exo.appendChild(p2);
         let p3 = document.createElement("p");
-        p3.innerHTML = "echo \"<ul>Voiture {$valeur['immatriculation']} de marque {$valeur['marque']} (couleur {$valeur['couleur']})</ul>\";";
+        p3.innerHTML = "}";
         exo.appendChild(p3);
         let p4 = document.createElement("p");
         p4.innerHTML = "}"
@@ -29,17 +30,18 @@ class php {
     verify() {
         var res = document.getElementById("result").value
         res = res.replace(/\s+/g, '');
-        if (res === "foreach($tab_objas$valeur){") {
+        if (res === "for(inti=0;i<10;i++){" || res==="for(inti=0;i<=9;i++){") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display="block";
             }
         }
-       else{
+        else{
             let err=document.createElement("p");
             err.innerHTML="Réponse erronée";
             err.style.color="red";
             exo.insertBefore(err,document.getElementById("result"));
         }
+        
     }
 }

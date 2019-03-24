@@ -1,0 +1,72 @@
+/* General */
+
+.game {
+    display: flex;
+}
+
+.left {
+    height: 85vh;
+    width: 85vh;
+    position: inherit;
+}
+
+.right {
+    margin-left: 5vw;
+}
+
+h1 {
+    margin-left: 5pw;
+}
+
+/* Map */
+
+#mapSprite {
+    position: relative;
+}
+
+#map {
+    width: 100%;
+}
+
+#personnage {
+    height: 3vh;
+    position: absolute;
+}
+
+/* EDT */
+
+#affichageEDT {
+    height: 75%;
+    width: 20vw;
+}
+
+#affichageEDT > div {
+    height: 15vh;
+    width: 100%;
+    margin: 1vh;
+    border: solid black 1px;
+    text-align: center;
+}
+
+#affichageEDT > div > p {
+    margin: 1vh;
+}
+
+/* Clock */
+
+#clock {
+    height: 15%;
+    width: 100%;
+    border: grey 1vh solid;
+    font-size: 10vh;
+    color: green;
+    background-color: black;
+    text-align: center;
+}
+
+/* Exercice */
+
+#exercice {
+    background-color: black;
+    color: white;
+}
