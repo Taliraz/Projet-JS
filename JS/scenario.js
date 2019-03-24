@@ -74,7 +74,7 @@ function finClavier(event) {
 function canEnter() {
     for(let door of listDoor){
         if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
-            console.log("rentre");
+            console.log(door.salle);
             return true;
         }
     }
@@ -84,13 +84,13 @@ function inDoor(position){
     for(let door of listDoor){
         if(position == 0){ // porte horizontale (up-down)
             if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
-                console.log("dans la porte");
+                console.log(door.salle);
                 // lance le cours correspondant
                 edt.matieres[0].lancer
             }
         }else if(position == 1){ // porte verticale (right-left)
             if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
-                console.log("dans la porte");
+                console.log(door.salle);
                 // lance le cours correspondant
                 edt.matieres[0].lancer();
             }
