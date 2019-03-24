@@ -12,7 +12,8 @@ class Edt {
         });
         this.matieres = [new Matiere(1, NomMatieres[0], salles[0]), new Matiere(2, NomMatieres[1], salles[1]), new Matiere(3, NomMatieres[2], salles[2]), new Matiere(4, NomMatieres[3], salles[3])];
     }
-
+    
+    
     affichage() {
         var affichage = document.getElementById("affichageEDT");
         for (let i = 0; i < 4; i++) {
@@ -20,5 +21,4 @@ class Edt {
             p.innerHTML = p.textContent + " : " + this.matieres[i].nom + " " + this.matieres[i].salle;
         }
     }
-
 }
