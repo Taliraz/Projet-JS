@@ -23,6 +23,10 @@ class Matiere {
             mat = new reseau();
         if (this.nom == "Scheme")
             mat = new scheme();
+        document.body.removeEventListener("keydown", mouvementClavier);
+        document.body.removeEventListener("keypressed", mouvementClavier);
         mat.start();
+        document.body.addEventListener("keydown", mouvementClavier);
+        document.body.addEventListener("keypressed", mouvementClavier);
     }
 }

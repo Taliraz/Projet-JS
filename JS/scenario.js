@@ -86,13 +86,17 @@ function inDoor(position) {
             if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
-                edt.matieres[0].lancer
+                if(edt.getMatiere(edt.getHoraire(h,min),door.salle)){
+                    edt.getMatiere(edt.getHoraire(h,min),door.salle).lancer();
+                }
             }
         } else if (position == 1) { // porte verticale (right-left)
             if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
-                edt.matieres[0].lancer();
+                if(edt.getMatiere(edt.getHoraire(h,min),door.salle)){
+                    edt.getMatiere(edt.getHoraire(h,min),door.salle).lancer();
+                }
             }
         }
     }

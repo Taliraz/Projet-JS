@@ -26,9 +26,9 @@ class Edt {
     }
 
     getMatiere(horaire, salle) {
-        for (var i = 0; i < matieres.length; i++) {
-            if (matieres[i].horaire == horaire && matieres[i].salle == salle) {
-                return matieres[i];
+        for (var i = 0; i < this.matieres.length; i++) {
+            if (this.matieres[i].horaire == horaire && this.matieres[i].salle == salle) {
+                return this.matieres[i];
             }
         }
     }
