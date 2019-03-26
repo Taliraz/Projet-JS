@@ -4,18 +4,18 @@ var pers = new Personnage(17, 17);
 var exo = document.getElementById("exercice");
 var left = document.getElementsByClassName("left")[0];
 var mapSprite = document.getElementById("mapSprite");
-var listDoor = [(new Door(50, 53, 79, 81, "K101")), //
-                (new Door(23, 25, 46, 49, "K102")), //
-                (new Door(60, 66, 79, 81, "K103")), //
-                (new Door(47, 50, 71, 73, "K104")), //
-                (new Door(80, 82, 42, 45, "K105")), //
-                (new Door(71, 73, 46, 49, "K106")), //
-                (new Door(80, 82, 30, 33, "K107")), //
-                (new Door(46, 49, 23, 25, "K108")), //
-                (new Door(43, 46, 15, 17, "K109")), //
-                (new Door(29, 32, 15, 17, "K111")), //
-                (new Door(15, 17, 50, 53, "K113")), //ok
-                (new Door(15, 17, 64, 67, "K115"))]; //ok
+var listDoor = [(new Door(50, 53, 79, 81, "K101")),
+                (new Door(23, 25, 46, 49, "K102")),
+                (new Door(60, 66, 79, 81, "K103")),
+                (new Door(47, 50, 71, 73, "K104")),
+                (new Door(80, 82, 42, 45, "K105")),
+                (new Door(71, 73, 46, 49, "K106")),
+                (new Door(80, 82, 30, 33, "K107")),
+                (new Door(46, 49, 23, 25, "K108")),
+                (new Door(43, 46, 15, 17, "K109")),
+                (new Door(29, 32, 15, 17, "K111")),
+                (new Door(15, 17, 50, 53, "K113")),
+                (new Door(15, 17, 64, 67, "K115"))];
 
 // functions
 function mouvementClavier(event) {
@@ -74,7 +74,6 @@ function finClavier(event) {
 function canEnter() {
     for (let door of listDoor) {
         if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
-            console.log(door.salle);
             return true;
         }
     }
@@ -86,29 +85,27 @@ function inDoor(position) {
             if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
-                if(edt.getMatiere(edt.getHoraire(h,min),door.salle)){
+                if(edt.getMatiere(edt.getHoraire(h,min),door.salle) && !edt.getMatiere(edt.getHoraire(h,min),door.salle).fini){
                     edt.getMatiere(edt.getHoraire(h,min),door.salle).lancer();
+                    document.body.removeEventListener("keydown", mouvementClavier);
                 }
             }
         } else if (position == 1) { // porte verticale (right-left)
             if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
-                if(edt.getMatiere(edt.getHoraire(h,min),door.salle)){
+                if(edt.getMatiere(edt.getHoraire(h,min),door.salle) && !edt.getMatiere(edt.getHoraire(h,min),door.salle).fini){
                     edt.getMatiere(edt.getHoraire(h,min),door.salle).lancer();
+                    document.body.removeEventListener("keydown", mouvementClavier);
                 }
             }
         }
     }
 }
 
-/* fonction qui empeche le deplacement du perso, 
- * lance un cours, permet au perso de se redeplacer 
- * une fois le cours fini 
- * Eventuelle gestion des points si la salle n'est pas bonne
- * ou retard etc... */
-
-function inClass() {}
+function outClass() {
+    document.body.addEventListener("keydown", mouvementClavier);
+}
 
 // scénario
 edt.affichage();
@@ -116,5 +113,4 @@ pers.placer();
 
 // events
 document.body.addEventListener("keydown", mouvementClavier);
-document.body.addEventListener("keypressed", mouvementClavier);
 document.body.addEventListener("keyup", finClavier);

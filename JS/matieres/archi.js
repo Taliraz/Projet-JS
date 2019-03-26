@@ -27,6 +27,7 @@ class archi {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display="block";
             }
+            outClass();
         }
         else{
             let err=document.createElement("p");

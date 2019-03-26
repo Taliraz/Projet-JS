@@ -3,7 +3,7 @@ class bd {
     construct() {}
 
     start() {
-        mapSprite.style.display="none";
+        mapSprite.style.display = "none";
         let p1 = document.createElement("p");
         p1.innerHTML = "Clients(idClient,nomClient,prenomClient)";
         exo.appendChild(p1);
@@ -16,7 +16,7 @@ class bd {
         let input = document.createElement("input");
         input.id = "result";
         input.style.width = "300px";
-        input.placeholder="Votre réponse"
+        input.placeholder = "Votre réponse"
         exo.append(input);
         let p5 = document.createElement("button");
         p5.innerHTML = "Vérifier"
@@ -28,18 +28,18 @@ class bd {
         var res = document.getElementById("result").value
         res = res.replace(/\s+/g, '');
         res = res.toLowerCase();
-        if (res === "select*fromclientsjoinfidelitesonfidelites.idclient=clients.idclient" || res==="select*fromfidelitesjoinclientsonfidelites.idclient=client.idclient" || res==="select*fromfidelitesjoinclientsonclients.idclient=fidelites.idclient" || res==="select*fromclientsjoinfidelitesonclients.idclient=fidelites.idclient") {
+        if (res === "select*fromclientsjoinfidelitesonfidelites.idclient=clients.idclient" || res === "select*fromfidelitesjoinclientsonfidelites.idclient=client.idclient" || res === "select*fromfidelitesjoinclientsonclients.idclient=fidelites.idclient" || res === "select*fromclientsjoinfidelitesonclients.idclient=fidelites.idclient") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
-                mapSprite.style.display="block";
+                mapSprite.style.display = "block";
             }
+            outClass();
+        } else {
+            let err = document.createElement("p");
+            err.innerHTML = "Réponse erronée";
+            err.style.color = "red";
+            exo.insertBefore(err, document.getElementById("result"));
         }
-        else{
-            let err=document.createElement("p");
-            err.innerHTML="Réponse erronée";
-            err.style.color="red";
-            exo.insertBefore(err,document.getElementById("result"));
-        }
-        
+
     }
 }

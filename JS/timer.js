@@ -1,4 +1,4 @@
-var h = 7;
+var h = 8;
 var min = 30;
 var inProgress = false;
 chronoStart();

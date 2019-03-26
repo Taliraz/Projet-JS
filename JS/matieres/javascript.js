@@ -3,11 +3,11 @@ class javascript {
     construct() {}
 
     start() {
-        mapSprite.style.display="none";
+        mapSprite.style.display = "none";
         let input = document.createElement("input");
         input.id = "result";
         input.style.width = "300px";
-        input.placeholder="récupérer la div d'id \"set\""
+        input.placeholder = "récupérer la div d'id \"set\""
         exo.append(input);
         let p1 = document.createElement("p");
         p1.innerHTML = "p=document.createElement(\"p\");";
@@ -33,14 +33,14 @@ class javascript {
         if (res === "vardiv=document.getElementById(\"set\")") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
-                mapSprite.style.display="block";
+                mapSprite.style.display = "block";
             }
-        }
-        else{
-            let err=document.createElement("p");
-            err.innerHTML="Réponse erronée";
-            err.style.color="red";
-            exo.insertBefore(err,document.getElementById("result"));
+            outClass();
+        } else {
+            let err = document.createElement("p");
+            err.innerHTML = "Réponse erronée";
+            err.style.color = "red";
+            exo.insertBefore(err, document.getElementById("result"));
         }
     }
 }
