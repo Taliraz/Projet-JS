@@ -1,6 +1,6 @@
 class scheme {
 
-    construct() {}
+    constructor() {}
 
     start() {
         mapSprite.style.display="none";

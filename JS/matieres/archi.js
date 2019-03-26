@@ -1,16 +1,17 @@
 class archi {
 
-    construct() {}
+    constructor() {}
 
     start() {
-        mapSprite.style.display="none";
+        console.log("test1 " + this.horaire);
+        mapSprite.style.display = "none";
         let p1 = document.createElement("p");
         p1.innerHTML = "Ecrivez 345 de la base 10 vers la base 2";
         exo.appendChild(p1);
         let input = document.createElement("input");
         input.id = "result";
         input.style.width = "300px";
-        input.placeholder="Votre réponse..."
+        input.placeholder = "Votre réponse..."
         exo.append(input);
         let p5 = document.createElement("button");
         p5.innerHTML = "Vérifier"
@@ -25,16 +26,15 @@ class archi {
         if (res === "101011001") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
-                mapSprite.style.display="block";
+                mapSprite.style.display = "block";
             }
             outClass();
+        } else {
+            let err = document.createElement("p");
+            err.innerHTML = "Réponse erronée";
+            err.style.color = "red";
+            exo.insertBefore(err, document.getElementById("result"));
         }
-        else{
-            let err=document.createElement("p");
-            err.innerHTML="Réponse erronée";
-            err.style.color="red";
-            exo.insertBefore(err,document.getElementById("result"));
-        }
-        
+
     }
 }

@@ -33,7 +33,6 @@ class Edt {
         }
     }
 
-
     getHoraire(heures, minutes) {
         if (heures == 8 || heures == 9) {
             return 1;

@@ -85,8 +85,8 @@ function inDoor(position) {
             if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
-                if(edt.getMatiere(edt.getHoraire(h,min),door.salle) && !edt.getMatiere(edt.getHoraire(h,min),door.salle).fini){
-                    edt.getMatiere(edt.getHoraire(h,min),door.salle).lancer();
+                if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
+                    edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
                     document.body.removeEventListener("keydown", mouvementClavier);
                 }
             }
@@ -94,8 +94,8 @@ function inDoor(position) {
             if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
                 console.log(door.salle);
                 // lance le cours correspondant
-                if(edt.getMatiere(edt.getHoraire(h,min),door.salle) && !edt.getMatiere(edt.getHoraire(h,min),door.salle).fini){
-                    edt.getMatiere(edt.getHoraire(h,min),door.salle).lancer();
+                if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
+                    edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
                     document.body.removeEventListener("keydown", mouvementClavier);
                 }
             }
@@ -105,6 +105,21 @@ function inDoor(position) {
 
 function outClass() {
     document.body.addEventListener("keydown", mouvementClavier);
+    var hour = edt.getHoraire(h, min);
+    switch (hour) {
+        case 1:
+            h = 10;
+            min = 0;
+            break;
+        case 2:
+            h = 13;
+            min = 30;
+            break;
+        case 3:
+            h = 15;
+            min = 45;
+            break;
+    }
 }
 
 // scénario

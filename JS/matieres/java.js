@@ -1,6 +1,6 @@
 class java {
 
-    construct() {}
+    constructor() {}
 
     start() {
         mapSprite.style.display = "none";
@@ -34,7 +34,7 @@ class java {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display = "block";
-                outClass();
+                outClass(horaire);
             }
             outClass();
         } else {
