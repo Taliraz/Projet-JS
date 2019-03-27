@@ -1,6 +1,7 @@
 // variables
 var edt = new Edt();
 var pers = new Personnage(17, 17);
+var score = new Score();
 var exo = document.getElementById("exercice");
 var left = document.getElementsByClassName("left")[0];
 var mapSprite = document.getElementById("mapSprite");
@@ -127,26 +128,29 @@ function outClass() {
     }
 }
 
+
 function commencer() {
+    edt = new Edt();
+    pers = new Personnage(17, 17);
+    chronoReset();
     document.body.addEventListener("keydown", mouvementClavier);
     document.body.addEventListener("keyup", finClavier);
+    document.getElementById("score").style.display="block";
     document.getElementById("menu").style.display = "none";
     document.getElementsByClassName("game")[0].style.display = "flex";
     edt.affichage();
     pers.placer();
     chronoStart();
+    score.resetScore();
+    score.afficherScore();
 }
 
 function terminer() {
     document.body.removeEventListener("keydown", mouvementClavier);
     document.body.removeEventListener("keyup", finClavier);
-    document.getElementById("menu").style.display = "block";
-    document.getElementsByClassName("game")[0].style.display = "none";
-    edt = new Edt();
-    pers = new Personnage(17, 17);
-    h = 7;
-    min = 45;
-    document.getElementById("start").innerHTML = "Recommencer";
+    document.getElementById("menu").style.display="block";
+    document.getElementsByClassName("game")[0].style.display="none";
+    document.getElementById("start").innerHTML="Recommencer";
 }
 
 // events
