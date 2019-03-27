@@ -120,7 +120,7 @@ function outClass() {
             min = 45;
             break;
         case 4:
-            terminer();
+            h=18;
             break;
     }
 }
@@ -138,8 +138,13 @@ function commencer() {
 function terminer() {
     document.body.removeEventListener("keydown", mouvementClavier);
     document.body.removeEventListener("keyup", finClavier);
-    document.getElementById("menu").style.display = "block";
-    document.getElementsByClassName("game")[0].style.display = "none";
+    document.getElementById("menu").style.display="block";
+    document.getElementsByClassName("game")[0].style.display="none";
+    edt = new Edt();
+    pers = new Personnage(17, 17);
+    h=7;
+    min=45;
+    document.getElementById("start").innerHTML="Recommencer";
 }
 
 // events
