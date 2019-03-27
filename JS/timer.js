@@ -1,5 +1,5 @@
-var h = 7;
-var min = 45;
+var h = 16;
+var min = 00;
 var inProgress = false;
 
 function chrono() {

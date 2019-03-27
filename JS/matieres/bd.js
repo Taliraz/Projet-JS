@@ -18,10 +18,11 @@ class bd {
         input.style.width = "300px";
         input.placeholder = "Votre réponse"
         exo.append(input);
-        let p5 = document.createElement("button");
-        p5.innerHTML = "Vérifier"
-        exo.appendChild(p5);
-        document.getElementsByTagName("button")[0].addEventListener("click", this.verify);
+        let bout = document.createElement("button");
+        bout.id="bout"
+        bout.innerHTML = "Vérifier"
+        exo.appendChild(bout);
+        document.getElementById("bout").addEventListener("click", this.verify);
     }
 
     verify() {

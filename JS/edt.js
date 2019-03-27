@@ -65,7 +65,7 @@ class Edt {
             } else {
                 return 0
             }
-        } else if (heures == 16 && heures == 17) {
+        } else if (heures == 16 || heures == 17) {
             return 4
         } else {
             return 0
