@@ -1,7 +1,6 @@
 var h = 7;
-var min = 30;
+var min = 45;
 var inProgress = false;
-chronoStart();
 
 function chrono() {
     if (inProgress) {

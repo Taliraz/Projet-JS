@@ -119,13 +119,31 @@ function outClass() {
             h = 15;
             min = 45;
             break;
+        case 4:
+            terminer();
+            break;
+            
     }
+}
+function commencer(){
+    document.body.addEventListener("keydown", mouvementClavier);
+    document.body.addEventListener("keyup", finClavier);
+    document.getElementById("menu").style.display="none";
+    document.getElementsByClassName("game")[0].style.display="flex";
+    edt.affichage();
+    pers.placer();
+    chronoStart();
+}
+
+function terminer(){
+    document.body.removeEventListener("keydown", mouvementClavier);
+    document.body.removeEventListener("keyup", finClavier);
+    document.getElementById("menu").style.display="block";
+    document.getElementsByClassName("game")[0].style.display="none";
 }
 
 // scénario
-edt.affichage();
-pers.placer();
+
 
 // events
-document.body.addEventListener("keydown", mouvementClavier);
-document.body.addEventListener("keyup", finClavier);
+document.getElementById("start").addEventListener("click",commencer);
