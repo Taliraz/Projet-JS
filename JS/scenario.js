@@ -41,7 +41,7 @@ function mouvementClavier(event) {
                     pers.mouvement(0, -1);
             } else
                 pers.mouvement(0, -1);
-            inDoor(1);
+            inDoor();
             break;
         case 39: // touche droite
             pers.sprite.style.transform = "rotate(180deg)";
@@ -59,7 +59,7 @@ function mouvementClavier(event) {
                     pers.mouvement(0, 1);
             } else
                 pers.mouvement(0, 1);
-            inDoor(1);
+            inDoor();
             break;
     }
 }

@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-var h = 8;
-var min = 30;
-=======
 var h = 7;
 var min = 45;
->>>>>>> 0e32377cc96c84d77c6d6b74b84b36e88ddced83
 var inProgress = false;
 
 function chrono() {
