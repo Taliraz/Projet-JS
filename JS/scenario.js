@@ -5,15 +5,15 @@ var exo = document.getElementById("exercice");
 var left = document.getElementsByClassName("left")[0];
 var mapSprite = document.getElementById("mapSprite");
 var listDoor = [(new Door(50, 53, 79, 81, "K101")),
-                (new Door(23, 25, 46, 49, "K102")),
-                (new Door(60, 66, 79, 81, "K103")),
-                (new Door(47, 50, 71, 73, "K104")),
-                (new Door(80, 82, 42, 45, "K105")),
-                (new Door(71, 73, 46, 49, "K106")),
+                (new Door(23, 25, 46, 50, "K102")),
+                (new Door(61, 66, 79, 81, "K103")),
+                (new Door(46, 50, 71, 73, "K104")),
+                (new Door(80, 82, 43, 46, "K105")),
+                (new Door(71, 73, 46, 51, "K106")),
                 (new Door(80, 82, 30, 33, "K107")),
-                (new Door(46, 49, 23, 25, "K108")),
-                (new Door(43, 46, 15, 17, "K109")),
-                (new Door(29, 32, 15, 17, "K111")),
+                (new Door(45, 50, 23, 25, "K108")),
+                (new Door(42, 46, 15, 17, "K109")),
+                (new Door(27, 32, 15, 17, "K111")),
                 (new Door(15, 17, 50, 53, "K113")),
                 (new Door(15, 17, 64, 67, "K115"))];
 
@@ -32,7 +32,7 @@ function mouvementClavier(event) {
                     pers.mouvement(-1, 0);
             } else
                 pers.mouvement(-1, 0);
-            inDoor(0);
+            inDoor()
             break;
         case 38: // touche haut
             pers.sprite.style.transform = "rotate(90deg)";
@@ -50,7 +50,7 @@ function mouvementClavier(event) {
                     pers.mouvement(1, 0);
             } else
                 pers.mouvement(1, 0);
-            inDoor(0);
+            inDoor()
             break;
         case 40: // touche bas
             pers.sprite.style.transform = "rotate(-90deg)";
@@ -74,30 +74,20 @@ function finClavier(event) {
 function canEnter() {
     for (let door of listDoor) {
         if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
+            console.log("peut entrer salle : " + door.salle);
             return true;
         }
     }
 }
 
-function inDoor(position) {
+function inDoor() {
     for (let door of listDoor) {
-        if (position == 0) { // porte horizontale (up-down)
-            if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
-                console.log(door.salle);
-                // lance le cours correspondant
-                if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
-                    edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
-                    document.body.removeEventListener("keydown", mouvementClavier);
-                }
-            }
-        } else if (position == 1) { // porte verticale (right-left)
-            if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
-                console.log(door.salle);
-                // lance le cours correspondant
-                if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
-                    edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
-                    document.body.removeEventListener("keydown", mouvementClavier);
-                }
+        if (pers.coordX > door.coordXmin && pers.coordX < door.coordXmax && pers.coordY > door.coordYmin && pers.coordY < door.coordYmax) {
+            console.log("est entré salle : " + door.salle);
+            // lance le cours correspondant
+            if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
+                edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
+                document.body.removeEventListener("keydown", mouvementClavier);
             }
         }
     }
