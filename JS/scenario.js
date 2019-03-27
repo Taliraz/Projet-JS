@@ -47,7 +47,7 @@ function mouvementClavier(event) {
         case 39: // touche droite
             pers.sprite.style.transform = "rotate(180deg)";
             if (!canEnter()) {
-                if (pers.coordX < 80 && ((pers.coordX < 23 || pers.coordX > 25) || (pers.coordY <= 23 || pers.coordY >= 73))) // Collision
+                if (pers.coordX < 80 && ((pers.coordX > 26 || pers.coordX < 23) || (pers.coordY <= 23 || pers.coordY >= 73))) // Collision
                     pers.mouvement(1, 0);
             } else
                 pers.mouvement(1, 0);
@@ -56,7 +56,7 @@ function mouvementClavier(event) {
         case 40: // touche bas
             pers.sprite.style.transform = "rotate(-90deg)";
             if (!canEnter()) {
-                if (pers.coordY < 79 && ((pers.coordY < 23 || pers.coordY > 25) || (pers.coordX <= 23 || pers.coordX >= 73))) // Collision
+                if (pers.coordY < 79 && ((pers.coordY > 26 || pers.coordY < 23) || (pers.coordX <= 23 || pers.coordX >= 73))) // Collision
                     pers.mouvement(0, 1);
             } else
                 pers.mouvement(0, 1);
@@ -72,6 +72,7 @@ function finClavier(event) {
     }
 }
 
+// regade si on est devant la porte
 function canEnter() {
     for (let door of listDoor) {
         if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
@@ -80,6 +81,7 @@ function canEnter() {
     }
 }
 
+// regade si on est dans la salle
 function inDoor(axe) {
     for (let door of listDoor) {
         if (door.axe === 1) {
@@ -121,7 +123,7 @@ function outClass() {
             min = 45;
             break;
         case 4:
-            h=18;
+            h = 18;
             break;
     }
 }
