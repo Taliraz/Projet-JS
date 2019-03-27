@@ -1,5 +1,9 @@
 /* General */
 
+.instructions{
+    text-align: justify;
+}
+
 .game {
     display: none;
 }
