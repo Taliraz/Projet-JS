@@ -20,7 +20,7 @@ class Matiere {
             mat = new math(this.horaire);
         if (this.nom == "PHP")
             mat = new php(this.horaire);
-        if (this.nom == "reseau")
+        if (this.nom == "Reseau")
             mat = new reseau(this.horaire);
         if (this.nom == "Scheme")
             mat = new scheme(this.horaire);
