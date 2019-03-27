@@ -1,6 +1,7 @@
 class javascript {
 
-    constructor() {}
+    constructor() {
+    }
 
     start() {
         mapSprite.style.display = "none";

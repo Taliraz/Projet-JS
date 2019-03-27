@@ -1,6 +1,7 @@
 class math {
 
-    constructor() {}
+    constructor() {
+    }
 
     start() {
         mapSprite.style.display="none";

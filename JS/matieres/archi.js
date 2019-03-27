@@ -1,6 +1,8 @@
 class archi {
 
-    constructor() {}
+    constructor() {
+        this.erreur=0;
+    }
 
     start() {
         console.log("test1 " + this.horaire);
@@ -31,6 +33,7 @@ class archi {
             }
             outClass();
         } else {
+            this.erreur++;
             let err = document.createElement("p");
             err.innerHTML = "Réponse erronée";
             err.style.color = "red";

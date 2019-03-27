@@ -5,9 +5,10 @@ class Matiere {
         this.salle = salle;
         this.fini = false;
     }
-    
+
     lancer() {
         var mat;
+        this.incrementScore();
         if (this.nom == "Architecture")
             mat = new archi(this.horaire);
         else if (this.nom == "Bases de donnees")
@@ -26,5 +27,24 @@ class Matiere {
             mat = new scheme(this.horaire);
         mat.start();
         this.fini = true;
+
+    }
+
+    incrementScore() {
+        switch (this.horaire) {
+            case 1:
+                score.mat1 = 20;
+                break;
+            case 2:
+                score.mat2 = 20;
+                break;
+            case 3:
+                score.mat3 = 20;
+                break;
+            case 4:
+                score.mat4 = 20;
+                break;
+        }
+        score.afficherScore();
     }
 }

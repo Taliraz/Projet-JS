@@ -1,6 +1,7 @@
 class php {
 
-    constructor() {}
+    constructor() {
+    }
 
     start() {
         mapSprite.style.display="none";

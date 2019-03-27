@@ -1,6 +1,8 @@
 class reseau {
 
-    constructor() {}
+    constructor() {
+        this.erreur=0;
+    }
 
     start() {
         mapSprite.style.display="none";

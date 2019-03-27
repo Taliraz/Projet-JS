@@ -1,6 +1,7 @@
 class bd {
 
-    constructor() {}
+    constructor() {
+    }
 
     start() {
         mapSprite.style.display = "none";

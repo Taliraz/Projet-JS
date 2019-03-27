@@ -1,6 +1,7 @@
 class java {
 
-    constructor() {}
+    constructor() {
+    }
 
     start() {
         mapSprite.style.display = "none";
