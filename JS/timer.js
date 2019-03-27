@@ -11,8 +11,10 @@ function chrono() {
                 min = 0;
                 h++
             }
-        } else
+        } else{
             chronoStop();
+            terminer();
+        }
         if (min < 10) {
             if (h < 10) {
                 document.getElementById("clock").innerHTML = "0" + h + ":0" + min;
@@ -41,7 +43,7 @@ function chronoStop() {
 }
 
 function chronoReset() {
-    h = 8;
-    min = 0;
+    h = 7;
+    min = 45;
     document.getElementById("clock").innerHTML = h + ":" + min;
 }
