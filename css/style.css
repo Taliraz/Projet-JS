@@ -1,7 +1,7 @@
 /* General */
 
 .game {
-    display: flex;
+    display: none;
 }
 
 .left {
