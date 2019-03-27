@@ -128,8 +128,12 @@ function outClass() {
 
 
 function commencer() {
+    edt = new Edt();
+    pers = new Personnage(17, 17);
+    chronoReset();
     document.body.addEventListener("keydown", mouvementClavier);
     document.body.addEventListener("keyup", finClavier);
+    document.getElementById("score").style.display="block";
     document.getElementById("menu").style.display = "none";
     document.getElementsByClassName("game")[0].style.display = "flex";
     edt.affichage();
