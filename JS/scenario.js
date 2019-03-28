@@ -112,7 +112,7 @@ function inDoor(axe) {
 }
 
 //paramètres : aucun
-//Si le personnage tremine son épreuve réalise un bond dans le temps ou termine le jeu si l'épreuve était la dernière
+//Si le personnage termine son épreuve réalise un bond dans le temps ou termine le jeu si l'épreuve était la dernière
 function outClass() {
     document.body.addEventListener("keydown", mouvementClavier);
     var hour = edt.getHoraire(h, min);

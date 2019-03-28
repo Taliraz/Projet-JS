@@ -1,8 +1,6 @@
 class scheme {
 
-    constructor() {
-        this.erreur = 0;
-    }
+    constructor() {}
 
     //paramètres : aucun
     //Gère l'épreuve jusqu'a la fin de celle ci
@@ -15,11 +13,6 @@ class scheme {
         input.id = "result";
         input.style.width = "300px";
         exo.appendChild(input);
-        let bout = document.createElement("button");
-        bout.id = "bout"
-        bout.innerHTML = "Vérifier"
-        exo.appendChild(bout);
-        document.getElementById("bout").addEventListener("click", this.verify);
     }
 
     //paramètres : aucun
@@ -32,13 +25,13 @@ class scheme {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display = "block";
             }
-            outClass();
+            return true;
         } else {
             let err = document.createElement("p");
             err.innerHTML = "Réponse erronée";
             err.style.color = "red";
             exo.insertBefore(err, document.getElementById("result"));
+            return false;
         }
-
     }
 }

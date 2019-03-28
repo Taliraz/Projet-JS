@@ -1,8 +1,6 @@
 class reseau {
 
-    constructor() {
-        this.erreur = 0;
-    }
+    constructor() {}
 
     //paramètres : aucun
     //Gère l'épreuve jusqu'a la fin de celle ci
@@ -19,12 +17,6 @@ class reseau {
         input.style.width = "300px";
         input.placeholder = "Votre réponse..."
         exo.append(input);
-        let p5 = document.createElement("button");
-        let bout = document.createElement("button");
-        bout.id = "bout"
-        bout.innerHTML = "Vérifier"
-        exo.appendChild(bout);
-        document.getElementById("bout").addEventListener("click", this.verify);
     }
     
     //paramètres : aucun
@@ -36,12 +28,13 @@ class reseau {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display = "block";
             }
-            outClass();
+            return true;
         } else {
             let err = document.createElement("p");
             err.innerHTML = "Réponse erronée";
             err.style.color = "red";
             exo.insertBefore(err, document.getElementById("result"));
+            return false;
         }
     }
 }

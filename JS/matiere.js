@@ -4,49 +4,63 @@ class Matiere {
         this.nom = nom;
         this.salle = salle;
         this.fini = false;
+        this.mat;
     }
-    
+
     //paramètres : aucun
     //Rècupère la matière et lance l'exercice
     lancer() {
-        var mat;
-        this.incrementScore();
         if (this.nom == "Architecture")
-            mat = new archi(this.horaire);
+            this.mat = new archi(this.horaire);
         else if (this.nom == "Bases de donnees")
-            mat = new bd(this.horaire);
+            this.mat = new bd(this.horaire);
         if (this.nom == "Java")
-            mat = new java(this.horaire);
+            this.mat = new java(this.horaire);
         if (this.nom == "JavaScript")
-            mat = new javascript(this.horaire);
+            this.mat = new javascript(this.horaire);
         if (this.nom == "Maths")
-            mat = new math(this.horaire);
+            this.mat = new math(this.horaire);
         if (this.nom == "PHP")
-            mat = new php(this.horaire);
+            this.mat = new php(this.horaire);
         if (this.nom == "Reseau")
-            mat = new reseau(this.horaire);
+            this.mat = new reseau(this.horaire);
         if (this.nom == "Scheme")
-            mat = new scheme(this.horaire);
-        mat.start();
-        this.fini = true;
+            this.mat = new scheme(this.horaire);
 
+        this.mat.start();
+        let bout = document.createElement("button");
+        bout.id = "bout"
+        bout.innerHTML = "Vérifier"
+        exo.appendChild(bout);
+        document.getElementById("bout").addEventListener("click", this.verifier);
+        this.fini = true;
+    }
+
+    verifier() {
+        if (edt.matieres[edt.getHoraire(h, min) - 1].mat.verify()) {
+            edt.matieres[edt.getHoraire(h, min) - 1].setScore();
+            outClass();
+        } else {
+            if (edt.matieres[edt.getHoraire(h, min) - 1].mat.error < 5)
+                edt.matieres[edt.getHoraire(h, min) - 1].mat.error += 1;
+        }
     }
 
     //paramètres : aucun
     //Initialise le score de la matière à 20
-    incrementScore() {
+    setScore() {
         switch (this.horaire) {
             case 1:
-                score.mat1 = 20;
+                score.mat1 = 20 - this.mat.error * 4;
                 break;
             case 2:
-                score.mat2 = 20;
+                score.mat2 = 20 - this.mat.error * 4;
                 break;
             case 3:
-                score.mat3 = 20;
+                score.mat3 = 20 - this.mat.error * 4;
                 break;
             case 4:
-                score.mat4 = 20;
+                score.mat4 = 20 - this.mat.error * 4;
                 break;
         }
         score.afficherScore();

@@ -1,13 +1,12 @@
 class archi {
 
     constructor() {
-        this.erreur = 0;
+        this.error = 1 - 1;
     }
     
     //paramètres : aucun
     //Gère l'épreuve jusqu'a la fin de celle ci
     start() {
-        console.log("test1 " + this.horaire);
         mapSprite.style.display = "none";
         let p1 = document.createElement("p");
         p1.innerHTML = "Ecrivez 345 de la base 10 vers la base 2";
@@ -17,11 +16,6 @@ class archi {
         input.style.width = "300px";
         input.placeholder = "Votre réponse..."
         exo.append(input);
-        let bout = document.createElement("button");
-        bout.id = "bout"
-        bout.innerHTML = "Vérifier"
-        exo.appendChild(bout);
-        document.getElementById("bout").addEventListener("click", this.verify);
     }
 
     //paramètres : aucun
@@ -35,14 +29,13 @@ class archi {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display = "block";
             }
-            outClass();
+            return true;
         } else {
-            this.erreur++;
             let err = document.createElement("p");
             err.innerHTML = "Réponse erronée";
             err.style.color = "red";
             exo.insertBefore(err, document.getElementById("result"));
+            return false;
         }
-
     }
 }

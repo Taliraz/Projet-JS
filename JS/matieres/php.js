@@ -22,11 +22,6 @@ class php {
         let p4 = document.createElement("p");
         p4.innerHTML = "}"
         exo.appendChild(p4);
-        let bout = document.createElement("button");
-        bout.id = "bout"
-        bout.innerHTML = "Vérifier"
-        exo.appendChild(bout);
-        document.getElementById("bout").addEventListener("click", this.verify);
     }
 
     //paramètres : aucun
@@ -39,12 +34,13 @@ class php {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display = "block";
             }
-            outClass();
+            return true;
         } else {
             let err = document.createElement("p");
             err.innerHTML = "Réponse erronée";
             err.style.color = "red";
             exo.insertBefore(err, document.getElementById("result"));
+            return false;
         }
     }
 }
