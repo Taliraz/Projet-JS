@@ -94,6 +94,9 @@ function inDoor(axe) {
                 console.log("entre :" + door.salle);
                 // lance le cours correspondant
                 if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
+                    if (!edt.enRetard(h,min)){
+                        score.assi=score.assi+5;
+                    }
                     edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
                     document.body.removeEventListener("keydown", mouvementClavier);
                 }
@@ -103,6 +106,9 @@ function inDoor(axe) {
                 console.log("entre :" + door.salle);
                 // lance le cours correspondant
                 if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
+                    if (!edt.enRetard(h,min)){
+                        score.assi=score.assi+5;
+                    }
                     edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
                     document.body.removeEventListener("keydown", mouvementClavier);
                 }
@@ -165,3 +171,4 @@ function terminer() {
 
 // events
 document.getElementById("start").addEventListener("click", commencer);
+

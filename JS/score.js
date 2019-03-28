@@ -5,7 +5,7 @@ class Score {
         this.mat2 = 0;
         this.mat3 = 0;
         this.mat4 = 0;
-        this.assi = 20;
+        this.assi = 0;
     }
     
     //paramètres : aucun
@@ -27,6 +27,6 @@ class Score {
         this.mat2 = 0;
         this.mat3 = 0;
         this.mat4 = 0;
-        this.assi = 20;
+        this.assi = 0;
     }
 }
