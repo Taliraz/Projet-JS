@@ -1,7 +1,20 @@
 /* General */
 
-.instructions{
+#menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.instruction{
+    width: 80vh;
     text-align: justify;
+    margin-bottom: 30 px;
+    margin-left: 10vh;
+}
+
+#start{
+    width: 20vh;
+    margin-left: 70vh;
 }
 
 .game {
