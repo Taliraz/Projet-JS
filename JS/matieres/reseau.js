@@ -4,6 +4,8 @@ class reseau {
         this.erreur = 0;
     }
 
+    //paramètres : aucun
+    //Gère l'épreuve jusqu'a la fin de celle ci
     start() {
         mapSprite.style.display = "none";
         let img = document.createElement("img");
@@ -24,7 +26,9 @@ class reseau {
         exo.appendChild(bout);
         document.getElementById("bout").addEventListener("click", this.verify);
     }
-
+    
+    //paramètres : aucun
+    //Vérifie si la réponse est correcte
     verify() {
         var res = document.getElementById("result").value
         if (res === "255.255.255.0") {

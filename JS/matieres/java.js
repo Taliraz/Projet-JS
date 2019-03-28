@@ -2,6 +2,8 @@ class java {
 
     constructor() {}
 
+    //paramètres : aucun
+    //Gère l'épreuve jusqu'a la fin de celle ci
     start() {
         mapSprite.style.display = "none";
         let p1 = document.createElement("p");
@@ -28,6 +30,8 @@ class java {
         document.getElementById("bout").addEventListener("click", this.verify);
     }
 
+    //paramètres : aucun
+    //Vérifie si la réponse est correcte
     verify() {
         var res = document.getElementById("result").value
         res = res.replace(/\s+/g, '');

@@ -9,6 +9,8 @@ class Door {
         this.salle = salle;
     }
 
+    //paramètres : aucun
+    //Place la porte à ses coordonnées
     placer() {
         var img = document.createElement("img");
         img.src = "";

@@ -18,9 +18,10 @@ var listDoor = [(new Door(50, 53, 79, 81, 1, "K101")),
                 (new Door(15, 17, 50, 53, 0, "K113")),
                 (new Door(15, 17, 64, 67, 0, "K115"))];
 
-// functions
+//paramètres : event (l'evenement keypressed ou keydown)
+//Déplace le personnage en fonction de la touche passée en paramètre
 function mouvementClavier(event) {
-    var k = event.keyCode; // event est ici un keydown, et keyCode est le code de la touche pressée
+    var k = event.keyCode;
     if (pers.move === false) {
         pers.sprite.src = "IMG/sprite.gif";
         pers.move = true;
@@ -65,6 +66,8 @@ function mouvementClavier(event) {
     }
 }
 
+//paramètres : event (l'évenement keyup)
+//Arrete le déplacement du personnage
 function finClavier(event) {
     if (pers.move === true) {
         pers.sprite.src = "IMG/sprite.png";
@@ -72,7 +75,8 @@ function finClavier(event) {
     }
 }
 
-// regade si on est devant la porte
+//paramètres : aucun
+//Vérifie si le personnage est devant une porte
 function canEnter() {
     for (let door of listDoor) {
         if (pers.coordX >= door.coordXmin && pers.coordX <= door.coordXmax && pers.coordY >= door.coordYmin && pers.coordY <= door.coordYmax) {
@@ -81,7 +85,8 @@ function canEnter() {
     }
 }
 
-// regade si on est dans la salle
+//paramètres : Axe (axe des X ou Axe des Y)
+//Si le personnage est dans un porte et que la porte correspond à une épreuve lance l'épreuve
 function inDoor(axe) {
     for (let door of listDoor) {
         if (door.axe === 1) {
@@ -106,6 +111,8 @@ function inDoor(axe) {
     }
 }
 
+//paramètres : aucun
+//Si le personnage tremine son épreuve réalise un bond dans le temps ou termine le jeu si l'épreuve était la dernière
 function outClass() {
     document.body.addEventListener("keydown", mouvementClavier);
     var hour = edt.getHoraire(h, min);
@@ -128,7 +135,8 @@ function outClass() {
     }
 }
 
-
+//paramètres : aucun
+//Initialise la partie 
 function commencer() {
     edt = new Edt();
     pers = new Personnage(17, 17);
@@ -145,6 +153,8 @@ function commencer() {
     score.afficherScore();
 }
 
+//paramètres : aucun
+//Termine la partie et affiche le menu
 function terminer() {
     document.body.removeEventListener("keydown", mouvementClavier);
     document.body.removeEventListener("keyup", finClavier);

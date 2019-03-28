@@ -13,6 +13,8 @@ class Edt {
         this.matieres = [new Matiere(1, NomMatieres[0], salles[0]), new Matiere(2, NomMatieres[1], salles[1]), new Matiere(3, NomMatieres[2], salles[2]), new Matiere(4, NomMatieres[3], salles[3])];
     }
 
+    //paramètres : aucun
+    //Affiche l'emploi du temps
     affichage() {
         var affichage = document.getElementById("affichageEDT");
         for (var i = 0; i < 4; i++) {
@@ -25,6 +27,8 @@ class Edt {
         };
     }
 
+    //paramètres : horaire (plage horaire), salle (numéro de salle)
+    //Retourne la matère correspondant à la salle et l'horaire
     getMatiere(horaire, salle) {
         for (var i = 0; i < this.matieres.length; i++) {
             if (this.matieres[i].horaire == horaire && this.matieres[i].salle == salle) {
@@ -33,6 +37,8 @@ class Edt {
         }
     }
 
+    //paramètres : heures, minutes 
+    //retourne la plage horaire en fonction de l'heure donnée en paramètre
     getHoraire(heures, minutes) {
         if (heures == 8 || heures == 9) {
             return 1;

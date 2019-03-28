@@ -5,7 +5,9 @@ class Matiere {
         this.salle = salle;
         this.fini = false;
     }
-
+    
+    //paramètres : aucun
+    //Rècupère la matière et lance l'exercice
     lancer() {
         var mat;
         this.incrementScore();
@@ -30,6 +32,8 @@ class Matiere {
 
     }
 
+    //paramètres : aucun
+    //Initialise le score de la matière à 20
     incrementScore() {
         switch (this.horaire) {
             case 1:

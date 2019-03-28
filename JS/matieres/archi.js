@@ -3,7 +3,9 @@ class archi {
     constructor() {
         this.erreur = 0;
     }
-
+    
+    //paramètres : aucun
+    //Gère l'épreuve jusqu'a la fin de celle ci
     start() {
         console.log("test1 " + this.horaire);
         mapSprite.style.display = "none";
@@ -22,6 +24,8 @@ class archi {
         document.getElementById("bout").addEventListener("click", this.verify);
     }
 
+    //paramètres : aucun
+    //Vérifie si la réponse est correcte
     verify() {
         var res = document.getElementById("result").value
         res = res.replace(/\s+/g, '');
