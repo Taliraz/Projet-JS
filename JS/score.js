@@ -5,7 +5,7 @@ class Score {
         this.mat2 = 0;
         this.mat3 = 0;
         this.mat4 = 0;
-        this.assi = 20;
+        this.assi = 0;
     }
     
     //paramètres : aucun
@@ -17,7 +17,13 @@ class Score {
     //paramètres : aucun
     //Affiche le score actuel
     afficherScore() {
-        document.getElementById("score").innerHTML = "Score:" + this.getScore();
+        var div=document.getElementById("score");
+        while(div.firstChild){
+            div.removeChild(div.firstChild);
+        }
+        var p=document.createElement("p");
+        p.innerHTML="Matière 1 : "+this.mat1+"/20"+" | Matière 2 : "+this.mat2+"/20"+" | Matière 3 : "+this.mat3+"/20"+" | Matière 4 : "+this.mat4+"/20"+" | Assiduité : "+this.assi+"/20"+"    | <strong>Score : "+this.getScore()+"/100</strong>";
+        div.appendChild(p);
     }
 
     //paramètres : aucun
@@ -27,6 +33,6 @@ class Score {
         this.mat2 = 0;
         this.mat3 = 0;
         this.mat4 = 0;
-        this.assi = 20;
+        this.assi = 0;
     }
 }
