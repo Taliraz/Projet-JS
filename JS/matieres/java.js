@@ -1,6 +1,8 @@
 class java {
 
-    constructor() {}
+    constructor() {
+        this.error = 1 - 1;
+    }
 
     //paramètres : aucun
     //Gère l'épreuve jusqu'a la fin de celle ci
@@ -34,7 +36,6 @@ class java {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
                 mapSprite.style.display = "block";
-                outClass(horaire);
             }
             return true;
         } else {

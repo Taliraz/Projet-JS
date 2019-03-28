@@ -1,6 +1,8 @@
 class javascript {
 
-    constructor() {}
+    constructor() {
+        this.error = 1 - 1;
+    }
 
     //paramètres : aucun
     //Gère l'épreuve jusqu'a la fin de celle ci
