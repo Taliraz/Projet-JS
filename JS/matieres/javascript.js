@@ -1,7 +1,6 @@
 class javascript {
 
-    constructor() {
-    }
+    constructor() {}
 
     start() {
         mapSprite.style.display = "none";
@@ -23,7 +22,7 @@ class javascript {
         p4.innerHTML = "div.appendChild(p)"
         exo.appendChild(p4);
         let bout = document.createElement("button");
-        bout.id="bout"
+        bout.id = "bout"
         bout.innerHTML = "Vérifier"
         exo.appendChild(bout);
         document.getElementById("bout").addEventListener("click", this.verify);

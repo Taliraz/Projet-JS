@@ -135,7 +135,7 @@ function commencer() {
     chronoReset();
     document.body.addEventListener("keydown", mouvementClavier);
     document.body.addEventListener("keyup", finClavier);
-    document.getElementById("score").style.display="block";
+    document.getElementById("score").style.display = "block";
     document.getElementById("menu").style.display = "none";
     document.getElementsByClassName("game")[0].style.display = "flex";
     edt.affichage();
@@ -148,9 +148,9 @@ function commencer() {
 function terminer() {
     document.body.removeEventListener("keydown", mouvementClavier);
     document.body.removeEventListener("keyup", finClavier);
-    document.getElementById("menu").style.display="block";
-    document.getElementsByClassName("game")[0].style.display="none";
-    document.getElementById("start").innerHTML="Recommencer";
+    document.getElementById("menu").style.display = "block";
+    document.getElementsByClassName("game")[0].style.display = "none";
+    document.getElementById("start").innerHTML = "Recommencer";
 }
 
 // events

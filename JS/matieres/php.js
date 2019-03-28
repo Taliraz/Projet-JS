@@ -1,10 +1,9 @@
 class php {
 
-    constructor() {
-    }
+    constructor() {}
 
     start() {
-        mapSprite.style.display="none";
+        mapSprite.style.display = "none";
         let p1 = document.createElement("p");
         p1.innerHTML = "$rep = Model::$pdo - > query(\"SELECT * FROM voiture\");"
         exo.appendChild(p1);
@@ -22,7 +21,7 @@ class php {
         p4.innerHTML = "}"
         exo.appendChild(p4);
         let bout = document.createElement("button");
-        bout.id="bout"
+        bout.id = "bout"
         bout.innerHTML = "Vérifier"
         exo.appendChild(bout);
         document.getElementById("bout").addEventListener("click", this.verify);
@@ -34,15 +33,14 @@ class php {
         if (res === "foreach($tab_objas$valeur){") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
-                mapSprite.style.display="block";
+                mapSprite.style.display = "block";
             }
             outClass();
-        }
-       else{
-            let err=document.createElement("p");
-            err.innerHTML="Réponse erronée";
-            err.style.color="red";
-            exo.insertBefore(err,document.getElementById("result"));
+        } else {
+            let err = document.createElement("p");
+            err.innerHTML = "Réponse erronée";
+            err.style.color = "red";
+            exo.insertBefore(err, document.getElementById("result"));
         }
     }
 }

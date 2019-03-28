@@ -8,7 +8,7 @@ class Door {
         this.axe = axe;
         this.salle = salle;
     }
-    
+
     placer() {
         var img = document.createElement("img");
         img.src = "";

@@ -1,7 +1,6 @@
 class bd {
 
-    constructor() {
-    }
+    constructor() {}
 
     start() {
         mapSprite.style.display = "none";
@@ -20,7 +19,7 @@ class bd {
         input.placeholder = "Votre réponse"
         exo.append(input);
         let bout = document.createElement("button");
-        bout.id="bout"
+        bout.id = "bout"
         bout.innerHTML = "Vérifier"
         exo.appendChild(bout);
         document.getElementById("bout").addEventListener("click", this.verify);

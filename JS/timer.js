@@ -11,7 +11,7 @@ function chrono() {
                 min = 0;
                 h++
             }
-        } else{
+        } else {
             chronoStop();
             terminer();
         }
