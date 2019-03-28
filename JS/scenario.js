@@ -94,8 +94,8 @@ function inDoor(axe) {
                 console.log("entre :" + door.salle);
                 // lance le cours correspondant
                 if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
-                    if (!edt.enRetard(h,min)){
-                        score.assi=score.assi+5;
+                    if (!edt.enRetard(h, min)) {
+                        score.assi = score.assi + 5;
                     }
                     edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
                     document.body.removeEventListener("keydown", mouvementClavier);
@@ -106,8 +106,8 @@ function inDoor(axe) {
                 console.log("entre :" + door.salle);
                 // lance le cours correspondant
                 if (edt.getMatiere(edt.getHoraire(h, min), door.salle) && !edt.getMatiere(edt.getHoraire(h, min), door.salle).fini) {
-                    if (!edt.enRetard(h,min)){
-                        score.assi=score.assi+5;
+                    if (!edt.enRetard(h, min)) {
+                        score.assi = score.assi + 5;
                     }
                     edt.getMatiere(edt.getHoraire(h, min), door.salle).lancer();
                     document.body.removeEventListener("keydown", mouvementClavier);
@@ -141,6 +141,18 @@ function outClass() {
     }
 }
 
+function endClass(horaire) {
+    if (horaire != 0) {
+        edt.matieres[horaire - 1].mat.error = 5;
+        edt.matieres[horaire - 1].setScore();
+        outClass();
+        while (exo.firstChild) {
+            exo.removeChild(exo.firstChild);
+            mapSprite.style.display = "block";
+        }
+    }
+}
+
 //paramètres : aucun
 //Initialise la partie 
 function commencer() {
@@ -171,4 +183,3 @@ function terminer() {
 
 // events
 document.getElementById("start").addEventListener("click", commencer);
-

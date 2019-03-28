@@ -6,6 +6,7 @@ var inProgress = false;
 //Affiche l'horloge sur la page et l'arrete à 18h00
 function chrono() {
     if (inProgress) {
+        endClass(edt.estFini(h, min));
         if (h < 18) {
             if (min < 59)
                 min++;

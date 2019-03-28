@@ -42,61 +42,58 @@ class Edt {
     getHoraire(heures, minutes) {
         if (heures >= 7 && heures <= 9) {
             return 1;
-        } 
-        else if (heures == 10 || heures == 11) {
+        } else if (heures == 10 || heures == 11) {
             return 2;
-        } 
-        else if (heures == 12 && minutes < 15) {
+        } else if (heures == 12 && minutes < 15) {
             return 2;
-        } 
-        else if (heures == 13 && minutes >= 30) {
+        } else if (heures == 13 && minutes >= 30) {
             return 3;
-        } 
-        else if (heures == 14) {
+        } else if (heures == 14) {
             return 3;
-        } 
-        else if (heures == 15 && minutes < 45) {
+        } else if (heures == 15 && minutes < 45) {
             return 3;
-        } 
-        else if (heures == 15 && minutes >= 45) {
+        } else if (heures == 15 && minutes >= 45) {
             return 4;
-        } 
-        else if (heures > 15) {
+        } else if (heures > 15) {
             return 4;
         }
         return 0;
 
     }
-    enRetard(heures,minutes){
-        if (heures==8 && minutes>5){
+    enRetard(heures, minutes) {
+        if (heures == 8 && minutes > 5) {
             return true;
-        }
-        else if(heures==9){
+        } else if (heures == 9) {
             return true;
-        }
-        else if (heures==10 && minutes>20){
+        } else if (heures == 10 && minutes > 20) {
             return true;
-        }
-        else if (heures==11 || heures==12){
+        } else if (heures == 11 || heures == 12) {
             return true;
-        }
-        else if (heures==13 && minutes>50){
+        } else if (heures == 13 && minutes > 50) {
             return true;
-        }
-        else if(heures==14){
+        } else if (heures == 14) {
             return true;
-        }
-        else if(heures ==15 && minutes<45){
+        } else if (heures == 15 && minutes < 45) {
             return true;
-        }
-        else if(heures==16 && minutes>5){
+        } else if (heures == 16 && minutes > 5) {
             return true;
-        }
-        else if(heures>17){
+        } else if (heures > 17) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
+    }
+
+    estFini(heures, minutes) {
+        if (heures == 9 && minutes == 59) {
+            return 1;
+        } else if (heures == 12 && minutes == 14) {
+            return 2;
+        } else if (heures == 15 && minutes == 44) {
+            return 3;
+        } else if (heures == 17 && heures == 59) {
+            return 4;
+        }
+        return 0;
     }
 }
