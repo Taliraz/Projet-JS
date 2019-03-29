@@ -149,6 +149,7 @@ function endClass(horaire) {
         while (exo.firstChild) {
             exo.removeChild(exo.firstChild);
             mapSprite.style.display = "block";
+            document.getElementById("screen").style.display = "none";
         }
     }
 }

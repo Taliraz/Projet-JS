@@ -30,6 +30,7 @@ class Matiere {
     //Rècupère la matière et lance l'exercice
     lancer() {
         this.mat.start();
+        document.getElementById("screen").style.display = "block";
         let bout = document.createElement("button");
         bout.id = "bout"
         bout.innerHTML = "Vérifier"

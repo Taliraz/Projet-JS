@@ -84,8 +84,16 @@ h1 {
 /* Exercice */
 
 #exercice {
-    background-color: black;
-    color: white;
+    /*background-color: black;
+    color: white;*/
+    position: absolute;
+    margin: 10vh;
+    max-width: 70vh;
+}
+
+#screen{
+    width: 90vh;
+    display: none;
 }
 
 #score{
