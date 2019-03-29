@@ -17,7 +17,11 @@ class Edt {
     //Affiche l'emploi du temps
     affichage() {
         var affichage = document.getElementById("affichageEDT");
-        for (var i = 0; i < 4; i++) {
+        var elements = document.getElementsByClassName("affichageMatiere");
+        while (elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+        for (let i = 0; i < 4; i++) {
             var nomMatiere = document.createElement("p");
             nomMatiere.classList.add("affichageMatiere");
             nomMatiere.innerHTML = this.matieres[i].nom;
