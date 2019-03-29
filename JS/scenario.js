@@ -1,7 +1,7 @@
 // variables
-var edt = new Edt();
-var pers = new Personnage(17, 17);
-var score = new Score();
+var edt
+var pers
+var score
 var exo = document.getElementById("exercice");
 var left = document.getElementsByClassName("left")[0];
 var mapSprite = document.getElementById("mapSprite");
@@ -157,7 +157,11 @@ function endClass(horaire) {
 //Initialise la partie 
 function commencer() {
     edt = new Edt();
+    for (var i = 0; i < 4; i++) {
+        edt.matieres[i].instancier();
+    }
     pers = new Personnage(17, 17);
+    score=new Score();
     chronoReset();
     document.body.addEventListener("keydown", mouvementClavier);
     document.body.addEventListener("keyup", finClavier);
@@ -167,13 +171,16 @@ function commencer() {
     edt.affichage();
     pers.placer();
     chronoStart();
-    score.resetScore();
     score.afficherScore();
 }
 
 //paramètres : aucun
 //Termine la partie et affiche le menu
 function terminer() {
+    while (exo.firstChild) {
+        exo.removeChild(exo.firstChild);
+        mapSprite.style.display = "block";
+    }
     document.body.removeEventListener("keydown", mouvementClavier);
     document.body.removeEventListener("keyup", finClavier);
     document.getElementById("menu").style.display = "block";

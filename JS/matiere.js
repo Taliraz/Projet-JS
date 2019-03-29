@@ -7,9 +7,7 @@ class Matiere {
         this.mat;
     }
 
-    //paramètres : aucun
-    //Rècupère la matière et lance l'exercice
-    lancer() {
+    instancier() {
         if (this.nom == "Architecture")
             this.mat = new archi(this.horaire);
         else if (this.nom == "Bases de donnees")
@@ -26,7 +24,11 @@ class Matiere {
             this.mat = new reseau(this.horaire);
         if (this.nom == "Scheme")
             this.mat = new scheme(this.horaire);
+    }
 
+    //paramètres : aucun
+    //Rècupère la matière et lance l'exercice
+    lancer() {
         this.mat.start();
         let bout = document.createElement("button");
         bout.id = "bout"

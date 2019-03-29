@@ -19,8 +19,10 @@ class Edt {
         var affichage = document.getElementById("affichageEDT");
         for (var i = 0; i < 4; i++) {
             var nomMatiere = document.createElement("p");
+            nomMatiere.classList.add("affichageMatiere");
             nomMatiere.innerHTML = this.matieres[i].nom;
             var nomSalle = document.createElement("p");
+            nomSalle.classList.add("affichageMatiere");
             nomSalle.innerHTML = this.matieres[i].salle;
             affichage.children[i].insertBefore(nomSalle, affichage.children[i].firstChild);
             affichage.children[i].insertBefore(nomMatiere, affichage.children[i].firstChild);
