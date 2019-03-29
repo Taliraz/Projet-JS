@@ -28,6 +28,7 @@ class reseau {
         if (res === "255.255.255.0") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
+                document.getElementById("screen").style.display = "none";
                 mapSprite.style.display = "block";
             }
             return true;

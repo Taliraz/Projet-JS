@@ -35,6 +35,7 @@ class java {
         if (res === "for(inti=0;i<10;i++){" || res === "for(inti=0;i<=9;i++){") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
+                document.getElementById("screen").style.display = "none";
                 mapSprite.style.display = "block";
             }
             return true;

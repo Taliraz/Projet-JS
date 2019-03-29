@@ -25,6 +25,7 @@ class scheme {
         if (res === "(*(/(+62)3)(/(*95)4))") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
+                document.getElementById("screen").style.display = "none";
                 mapSprite.style.display = "block";
             }
             return true;
