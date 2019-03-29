@@ -3,7 +3,7 @@ class archi {
     constructor() {
         this.error = 1 - 1;
     }
-    
+
     //paramètres : aucun
     //Gère l'épreuve jusqu'a la fin de celle ci
     start() {
@@ -35,7 +35,8 @@ class archi {
             let err = document.createElement("p");
             err.innerHTML = "Réponse erronée";
             err.style.color = "red";
-            exo.insertBefore(err, document.getElementById("result"));
+            if (this.error == 0)
+                exo.insertBefore(err, document.getElementById("result"));
             return false;
         }
     }

@@ -20,7 +20,7 @@ class reseau {
         input.placeholder = "Votre réponse..."
         exo.append(input);
     }
-    
+
     //paramètres : aucun
     //Vérifie si la réponse est correcte
     verify() {
@@ -36,7 +36,8 @@ class reseau {
             let err = document.createElement("p");
             err.innerHTML = "Réponse erronée";
             err.style.color = "red";
-            exo.insertBefore(err, document.getElementById("result"));
+            if (this.error == 0)
+                exo.insertBefore(err, document.getElementById("result"));
             return false;
         }
     }
