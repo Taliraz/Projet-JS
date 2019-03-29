@@ -181,6 +181,7 @@ function terminer() {
     while (exo.firstChild) {
         exo.removeChild(exo.firstChild);
         mapSprite.style.display = "block";
+        document.getElementById("screen").style.display = "none";
     }
     document.body.removeEventListener("keydown", mouvementClavier);
     document.body.removeEventListener("keyup", finClavier);

@@ -34,6 +34,7 @@ class php {
         if (res === "foreach($tab_objas$valeur){") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
+                document.getElementById("screen").style.display = "none";
                 mapSprite.style.display = "block";
             }
             return true;

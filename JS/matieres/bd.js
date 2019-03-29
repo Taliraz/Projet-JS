@@ -33,6 +33,7 @@ class bd {
         if (res === "select*fromclientsjoinfidelitesonfidelites.idclient=clients.idclient" || res === "select*fromfidelitesjoinclientsonfidelites.idclient=client.idclient" || res === "select*fromfidelitesjoinclientsonclients.idclient=fidelites.idclient" || res === "select*fromclientsjoinfidelitesonclients.idclient=fidelites.idclient") {
             while (exo.firstChild) {
                 exo.removeChild(exo.firstChild);
+                document.getElementById("screen").style.display = "none";
                 mapSprite.style.display = "block";
             }
             return true;
